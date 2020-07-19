@@ -1,0 +1,70 @@
+<?php
+
+$config = array();
+$config['hassUrl'] = 'http://1.2.1.3/api/';
+$config['hassToken'] = 'your home assistant api key here';
+$config['jsonfile'] = "status.json";
+$config['spacestate'] = "binary_sensor.space_state";
+$config['spaceopenedby'] = "input_text.spaceopenedby";
+$config['sensors'] = array( 
+    "sensor.bar_temperature",
+    "sensor.gameroom_temperature",
+    "sensor.studio_temperature",
+    "sensor.zaal_1_temperature",
+    "sensor.zaal_2_temperature",
+    "sensor.bar_humidity",
+    "sensor.gameroom_humidity",
+    "sensor.studio_humidity",
+    "sensor.zaal_1_humidity",
+    "sensor.zaal_2_humidity",
+    "sensor.power",
+    "sensor.amp_zaal_1_power",
+    "sensor.switch_core_poe_power",
+    "sensor.printer3_actual_bed_temp",
+    "sensor.printer3_actual_tool0_temp",
+);
+
+$apiBasics = array (
+  'spacefed' => 
+  array (
+    'spacesaml' => true,
+    'spacephone' => false,
+    'spacenet' => true,
+  ),
+  'api' => '0.13',
+  'logo' => 'http://somespace.nl/spaceapi/logo.png',
+  'space' => 'NURDSpace',
+  'url' => 'http://somespace.nl/',
+  'cache' => 
+  array (
+    'schedule' => 'm.02',
+  ),
+  'issue_report_channels' => 
+  array (
+    0 => 'ml',
+  ),
+  'state' => 
+  array (
+    'icon' => 
+    array (
+      'open' => 'http://somespace.nl/spaceapi/icon-open.png',
+      'closed' => 'http://somespace.nl/spaceapi/icon-closed.png',
+    ),
+  ),
+  'contact' => 
+  array (
+    'ml' => 'nurds@somespace.nl',
+    'twitter' => '@SOMEspace',
+    'irc' => 'irc://irc.some.net/#somespace',
+  ),
+  'location' => 
+  array (
+    'lat' => 1,
+    'lon' => 1,
+    'address' => 'Somewhere',
+  ),
+  'cam' => 
+  array (
+    0 => 'http://somespace.nl/channel.gif',
+  ),
+);
