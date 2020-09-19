@@ -1,6 +1,6 @@
 <?php
 include("config.php");
-
+header('Content-Type: application/json');
 function callHass($path, $payload = '') {
     global $config;
     $requestHeaders = array (
@@ -56,11 +56,10 @@ if (!$filemtime or (time() - $filemtime >= $cache_life)){
         else
             $apiBasics['sensor']['generic'][] = $apiSensor;
     }
-    //echo json_encode($apiBasics, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
-    echo json_encode($apiBasics, JSON_UNESCAPED_SLASHES);
+    echo json_encode($apiBasics, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
 
     $myfile = fopen($config['jsonfile'], "w") or die("Unable to open file!");
-    fwrite($myfile, json_encode($apiBasics, JSON_UNESCAPED_SLASHES));
+    fwrite($myfile, json_encode($apiBasics, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
     fclose($myfile);
 }else{
     readfile($config['jsonfile']);
